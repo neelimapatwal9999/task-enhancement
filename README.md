@@ -11,40 +11,52 @@ Adding additional functionality to odoo addons modules
 
 ### Project Module
 
-- Enhanced task dependencies management in projects
-- Added support for task relationships and dependencies
+- Added task dependencies to project tasks
+
+  - Tasks can now depend on other tasks
+  - Visualize task dependencies in project views
+
+- Enhanced task validation
+
+  - Prevents circular dependencies between tasks
+  - Validates task stage transitions based on dependencies
+  - Clear error messages when validation fails
 
 ## Project Structure
 
 1. **`custom_addons/`**: Directory for custom Odoo modules
-    - Contains all custom modules developed for this project
-    - Each module follows Odoo's standard structure:
 
-      ```text
-      module_name/
-      ├── __init__.py
-      ├── __manifest__.py
-      ├── models/
-      ├── views/
-      ├── security/
-      └── data/
-      ```
+   - Contains all custom modules developed for this project
+   - Each module follows Odoo's standard structure:
+
+     ```text
+     module_name/
+     ├── __init__.py
+     ├── __manifest__.py
+     ├── models/
+     ├── views/
+     ├── security/
+     └── data/
+     ```
 
 2. **`etc/`**: Configuration files and dependencies
-    - **`odoo-sample.conf`**: Template configuration file
-      - Sample configuration without sensitive data
-      - Used as reference for setting up new environments
+
+   - **`odoo-sample.conf`**: Template configuration file
+     - Sample configuration without sensitive data
+     - Used as reference for setting up new environments
 
 3. **`.env-sample/`**: Environment variables and secrets
-    - **`db.env`**: Database environment variables
-      - Contains database connection settings
-      - Includes host, port, name, user and password
-      - Not tracked in version control for security
 
-    - **`odoo.env`**: Environment variables template
-      - Sample configuration for database settings
-      - Used as reference for local development
-      - Contains placeholder values that need to be replaced
+   - **`db.env`**: Database environment variables
+
+     - Contains database connection settings
+     - Includes host, port, name, user and password
+     - Not tracked in version control for security
+
+   - **`odoo.env`**: Environment variables template
+     - Sample configuration for database settings
+     - Used as reference for local development
+     - Contains placeholder values that need to be replaced
 
 ## Getting Started with Application
 
@@ -78,6 +90,6 @@ Adding additional functionality to odoo addons modules
 
 5. Accessing the application:
 
-    ```bash
-    http://localhost:8069
-    ```
+   ```bash
+   http://localhost:8069
+   ```
